@@ -1,6 +1,7 @@
   body {
 margin:0%;
 font-family: Arial, Helvetica, sans-serif;
+background-color:#dddfd4;
   }
   
   /* side ko bala */
@@ -211,7 +212,7 @@ font-family: Arial, Helvetica, sans-serif;
 
 }
 .firefightingRobot{
-   background-color: #818181;
+   background-color: #e3e3e3;;
    min-height: 500px;
    width: 100%;
    float: left;
@@ -239,4 +240,61 @@ border-radius: 80%;
   background-repeat: no-repeat;
   background-size: contain;
   float: left;
+}
+
+@keyframes youtubechannelanimation{
+from{transform: translateX(-50%)}
+to{transform: translateX(0px)}  
+}
+.youtubechannel{
+  background-image: url("2OAL\ YOUTUBE.png");
+  height: 50%;
+  width: 100%;
+  border-radius: 90%;
+   /* Create the parallax scrolling effect */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain;
+   float: left;
+}
+.addanimationyoutube{
+  animation: youtubechannelanimation 1s 0s ease-out backwards;
+ 
+}
+.YoutubeVideos{
+
+}
+@keyframes textanime {
+  0%{opacity: 0;}
+  25%{opacity: 1;}
+  50%{opacity: 0;}
+  75%{opacity: 1;}
+  100%{opacity: 0;}
+}
+.textanimation{
+animation: textanime 2s 0s ease-in-out infinite;
+}
+
+@keyframes appanime {
+  from{transform: translateX(-30px);;}
+  to{transform: translatey(0px);}
+}
+.addappanimation{
+animation: appanime 1s;
+}
+
+.tenparallax{
+    /* The image used */
+    background-image: url("TEN.png");
+  
+    /* Set a specific height */
+    min-height: 500px;
+    width: 100%;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
 }

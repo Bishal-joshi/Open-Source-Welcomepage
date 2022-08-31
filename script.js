@@ -27,3 +27,47 @@ const observer = new IntersectionObserver(entries => {
 });
 
 observer.observe(document.querySelector('.observation'));
+
+
+
+  
+const youtubechannel = document.querySelector('.youtubechannel');
+youtubechannel.classList.remove('addanimationyoutube')
+
+// Create the observer, same as before:
+const youtubechannelobserve = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+     youtubechannel.classList.add('addanimationyoutube')
+        return;
+    }
+    youtubechannel.classList.remove('addanimationyoutube')
+  });
+});
+
+youtubechannelobserve.observe(document.querySelector('.youtubechannel'));
+
+
+
+
+
+ 
+
+
+// Create the observer, same as before:
+const appobserve = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('addappanimation')
+        return;
+    }
+    entry.target.classList.remove('addappanimation')
+
+  });
+});
+
+for(let i=0;i<=3;i++){
+
+  appobserve.observe(document.querySelector(`.myapps${i}`));
+
+}
