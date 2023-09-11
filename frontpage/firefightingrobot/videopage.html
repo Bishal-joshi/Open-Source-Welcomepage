@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+
+    <!-- Include Lightbox2 CSS and JavaScript -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css">
+</head>
+<body>
+
+    <!-- Video at the top -->
+    <div class="video-container">
+        <video controls autoplay>
+            <source src="Firefighting robot.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <!-- Image Gallery -->
+    <div class="image-gallery">
+        <a href="1.jpg" data-lightbox="gallery" data-title="Image 1">
+            <img src="1.jpg" alt="Image 1">
+        </a>
+        <a href="2.jpg" data-lightbox="gallery" data-title="Image 2">
+            <img src="2.jpg" alt="Image 2">
+        </a>
+        <a href="4.jpg" data-lightbox="gallery" data-title="Image 4">
+            <img src="4.jpg" alt="Image 4">
+        </a>
+        <a href="5.jpg" data-lightbox="gallery" data-title="Image 5">
+            <img src="5.jpg" alt="Image 5">
+        </a>
+    </div>
+
+    <!-- Include Lightbox2 JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+</body>
+</html>

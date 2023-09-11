@@ -10,6 +10,145 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
+
+  
+
+ /* Set the parent container to occupy the entire screen width and height */
+ .profilecardcontainer {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Minimum height to cover the entire viewport */
+    background-color: #333; /* Background color for the container */
+    
+  }
+
+
+  .profilecard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  margin-top: 50px;
+  background-color: #ddd;
+}
+
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+.mybutton {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.mybutton:hover, a:hover {
+  opacity: 0.7;
+}
+
+
+
+.description {
+  flex-grow: 1; /* Allow the description to expand and take remaining space */
+  /* background-color: white; */
+  padding: 20px;
+  max-width: 50vw;
+  margin: 20px;
+  float: left;
+color: #000;
+}
+
+/* Add the CSS styles as previously mentioned */
+.description #typing-text {
+  text-align: left; /* Align the text to the left */
+  padding-left: 20px; /* Optional: Add some left padding for better alignment */
+  font-size: 32px;
+  animation: typing 3s steps(40, end), blink-caret 0.5s step-end infinite;
+}
+
+
+
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #000;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .header {
   background-color: #f1f1f1;
   padding: 30px;
@@ -304,49 +443,6 @@ img {vertical-align: middle;}
 
 
 
-.profilecard {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-  margin-top: 50px;
-}
-
-
-.title {
-  color: grey;
-  font-size: 18px;
-}
-
-.mybutton {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
-}
-
-.mybutton:hover, a:hover {
-  opacity: 0.7;
-}
-
-
-
-
-
-
 
  /* Set the parent container to occupy the entire screen width and height */
  .cardcontainer {
@@ -408,43 +504,380 @@ a {
     z-index: 1;
   }
 
+
+
+
+
+
+
+
+.engineer-parallax {
+    background-image: url('journeyasengineer.png'); /* Set your background image here */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.engineer-parallax-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.engineer-parallax-content h1 {
+    font-size: 36px;
+    margin: 0;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+.c-container{
+           flex-direction: row;
+           display: flex;
+        }
+
+        .code-container, .output-container {
+            width: 50%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Styles for code and output containers */
+        .code-container {
+            background-color: #f9f9f9;
+        }
+
+        .output-container {
+            background-color: #e0e0e0;
+        }
+
+        pre {
+            margin: 0;
+        }
+
+  /* Styles for the link */
+  .next-page-link {
+            position: relative;
+            bottom: 10px;
+            right: 10px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            float: right;
+        }
+
+        .next-page-link:hover {
+            background-color: #0056b3;
+        }
+
+
+
+
+
+
+
+
+         /* Container for the content */
+         .robot-container {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            justify-content: space-evenly;
+            flex-direction: row;
+        }
+
+        /* Image on the left */
+        .robot-image {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .robot-image img{
+           max-width: 40vw;
+           max-height: 40vw;
+           border-radius: 10px;
+           box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Add shadow */
+          
+        }
+        .robot-description p{
+       color:#bbb;
+          
+        }
+        /* Description on the right */
+        .robot-description {
+            flex: 2;
+            padding: 20px;
+        }
+
+
+         /* Styles for the link */
+  .prev-page-link {
+            position: relative;
+            bottom: 20px;
+            left: 5vw;
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            align-self: center;
+            /* float: left; */
+        }
+
+        .prev-page-link:hover {
+            background-color: #0056b3;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .wallet-content {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .wallet-project-description {
+            flex: 1;
+            padding: 20px;
+        }
+        .wallet-project-description h1{
+          color: #000;
+        }
+
+        .wallet-project-image {
+            flex: 1;
+            text-align: center;
+            
+        }
+
+
+
+
+
+
+
+
+
+        .finalyear-content {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .finalyear-project-description {
+            flex: 1;
+            padding: 20px;
+        }
+        .finalyear-project-description h1{
+            color: #000;
+        }
+
+        .finalyear-project-image {
+            flex: 1;
+            text-align: center;
+            
+        }
+        .finalyear-project-image img{
+           height: 500px;
+           width: 300px;
+           
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        .club-content {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .club-activity-description {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .club-activity-image {
+            flex: 1;
+            text-align: center;
+        }
+        .club-activity-description h1{
+            color: black;
+        }
+        .club-activity-image img{
+           height: 300px;
+           width: 500px;
+           border-radius: 10px;
+           box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Add shadow */
+          
+        }
+       
+      
+
+
+
+
+
+
+
+
+        .mobileapp-parallax {
+    background-image: url('googleplayparallax.png'); /* Set your background image here */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.mobileapp-parallax-content {
+    /* background-color: rgba(0, 0, 0, 0.5); Semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+
+        .intro-mobileapp-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            margin-top: 90vh;
+            text-align: left;
+
+        }
+
+        .intro-mobileapp-intro {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #000;
+            text-align: left;
+        }
+       
+
+
+      
+      
+        .applist-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-bottom: 90vh;
+
+        }
+
+        .applist-app-card {
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+        }
+
+        .applist-app-card:last-child {
+            border-bottom: none;
+        }
+
+        .applist-app-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .applist-app-description {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .applist-app-link {
+            font-size: 16px;
+            color: #007bff;
+            text-decoration: none;
+            display: block;
+        }
+
+        .applist-app-link:hover {
+            text-decoration: underline;
+        }
+
+
 </style>
 </head>
 <body>
 
+  
 
-<div class="slideshow-container">
+<div class="cardcontainer">
 
-<div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="img_nature_wide.jpg" style="width:100%">
-  <div class="text">Caption Text</div>
-</div>
+  <div class="profilecard">
+    <img src="myphoto.jpg" alt="John" style="width:100%">
+    <h2>Bishal Joshi</h2>
+    <p class="title">CEO & Founder, Overcloud</p>
+    <p>Pokhara University</p>
+    <div style="margin: 24px 0;">
+      <a href="#"><i class="fa fa-dribbble"></i></a> 
+      <a href="#"><i class="fa fa-twitter"></i></a>  
+      <a href="#"><i class="fa fa-linkedin"></i></a>  
+      <a href="#"><i class="fa fa-facebook"></i></a> 
+    </div>
+    <p><button class="mybutton">Contact</button></p>
+  </div>
+  
+  <div class="description">
+    <p id="typing-text"></p>
+  </div>
+  
+  
+  </div>
 
-<div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="img_snow_wide.jpg" style="width:100%">
-  <div class="text">Caption Two</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="img_mountains_wide.jpg" style="width:100%">
-  <div class="text">Caption Three</div>
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">❮</a>
-<a class="next" onclick="plusSlides(1)">❯</a>
-
-</div>
-
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
 
 
 <div class="topnav" id="myTopnav">
@@ -557,23 +990,242 @@ a {
       <li>Deep Learning</li>
     </ul>
   </div>
+
+
+
 </div>
 
 
-<div class="profilecard">
-  <img src="myphoto.jpg" alt="John" style="width:100%">
-  <h2>Bishal Joshi</h2>
-  <p class="title">CEO & Founder, Overcloud</p>
-  <p>Pokhara University</p>
-  <div style="margin: 24px 0;">
-    <a href="#"><i class="fa fa-dribbble"></i></a> 
-    <a href="#"><i class="fa fa-twitter"></i></a>  
-    <a href="#"><i class="fa fa-linkedin"></i></a>  
-    <a href="#"><i class="fa fa-facebook"></i></a> 
+
+
+
+
+
+<div class="engineer-parallax">
+  <div class="parallax-content">
+      <h1>My Journey as an Engineer</h1>
+    
   </div>
-  <p><button class="mybutton">Contact</button></p>
 </div>
 
+
+<div class="c-container">
+ 
+<div class="code-container">
+  <h3>C Program:</h3>
+  <pre>
+      #include &lt;stdio.h&gt;
+
+      int main() {
+          printf("Click on 
+          View All");
+          return 0;
+      }
+  </pre>
+</div>
+<div class="output-container">
+  <h3>Output:</h3>
+  <pre>
+      Click on View All
+  </pre>
+
+
+
+</div>
+
+
+
+
+</div>
+
+<a href="Cprogramming.html" class="next-page-link">View All</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="robot-container">
+  <!-- Image on the left -->
+  <div class="robot-image">
+      <img src="./firefightingrobot/firefightingrobot.jpg" alt="Fire Fighting Robot">
+  </div>
+  <!-- Description on the right -->
+  <div class="robot-description">
+      <h2>Building a Competition-Winning Fire Fighting Robot</h2>
+      <p>
+          In my second semester, I had the incredible opportunity to design and construct a competition-winning fire-fighting robot using Arduino. This project marked a significant milestone in my journey as an engineer and maker.
+      </p>
+      <p>
+          The robot was equipped with state-of-the-art sensors and a robust Arduino-based control system. It excelled in navigating challenging environments, detecting and extinguishing flames efficiently. Our team's dedication, innovative approach, and meticulous programming enabled us to clinch the top prize in the competition. This experience not only honed my technical skills but also ignited a passion for robotics that continues to drive my projects today.
+      </p>
+  </div>
+</div>
+<a href="./firefightingrobot/videopage.html" class="prev-page-link" target="_blank">View Video</a>
+
+
+
+
+
+<div class="wallet-content">
+  <div class="wallet-project-description">
+      <h1>Mobile Wallet App</h1>(Award Winning)
+      <h2>Features:</h2>
+      <ol>
+          <li><strong>Registration and Login system:</strong> Users can register and log in securely.</li>
+          <li><strong>QR Payment and Phone Number Payment:</strong> Convenient payment methods using QR codes and phone numbers.</li>
+          <li><strong>Asymmetric Encryption:</strong> Utilizes encryption techniques similar to Bitcoin for secure communication between users and the server.</li>
+          <li><strong>My Own Virtual Bank API:</strong> Provides a virtual bank API for loading money into the wallet.</li>
+          <li><strong>KYC Verification:</strong> Implements Know Your Customer verification for user security.</li>
+          <li><strong>Pin Number:</strong> Requires a PIN number for sending money to enhance security.</li>
+          <li><strong>Custom Payment Gateway:</strong> Created a unique payment gateway integrated with a movie ticket website for seamless transactions.</li>
+      </ol>
+  </div>
+  <div class="wallet-project-image">
+      <img src="mobille-wallet.png" alt="Mobile Wallet App Image">
+  </div>
+</div>
+
+
+<div class="finalyear-content">
+  <div class="finalyear-project-description">
+      <h1>AI Projects</h1>
+      (Final Year College Project)
+      <h2>Features:</h2>
+      <ol>
+          <li><strong>Sentimental Analysis (from BERT) from Patient Reviews:</strong> Utilized BERT for sentiment analysis of patient reviews.</li>
+          <li><strong>Doctor and Hospital Recommendation System:</strong> Developed a recommendation system for doctors and hospitals.</li>
+          <li><strong>Chatbot from Neural Network (Feed Forward):</strong> Implemented a chatbot using feed-forward neural networks.</li>
+          <li><strong>Sentence Mapping (Sentence Similarity):</strong> Created a system for sentence mapping and similarity analysis.</li>
+      </ol>
+  </div>
+  <div class="finalyear-project-image">
+      <img src="umbrellacare/umbrellacare.png" alt="AI Projects Image">
+  </div>
+</div>
+<a href="./umbrellacare/photopage.html" class="prev-page-link" target="_blank">View Photoes</a>
+
+
+
+
+
+<div class="club-content">
+  <div class="club-activity-description">
+      <h1>Clubs, Events, and Activities</h1>
+      <h2>My Involvement:</h2>
+      <ol>
+          <li><strong>Founder of MAD Club at NCIT (Mobile Application Development):</strong> Initiated and led the Mobile Application Development (MAD) club at NCIT.</li>
+          <li><strong>Hosted Workshop on Git and GitHub in NCIT:</strong> Conducted a workshop on Git and GitHub for the NCIT community.</li>
+          <li><strong>Speaker at Orientation Program of MAD Club:</strong> Presented as a speaker during the orientation program of the MAD club.</li>
+      </ol>
+  </div>
+  <div class="club-activity-image">
+      <img src="./mad club/2.jpg" alt="Clubs, Events, and Activities Image">
+  </div>
+</div>
+<a href="./mad club/photopage.html" class="prev-page-link" target="_blank">View Photoes</a>
+
+
+
+
+
+
+
+
+
+<div class="mobileapp-parallax">
+  <div class="mobileapp-parallax-content">
+    
+<div class="intro-mobileapp-container">
+  <h1>My Journey in Mobile Applications</h1>
+  <p class="intro-mobileapp-intro">
+      Hello! I'm Bishal, and I'm passionate about app development. It all started with a curiosity while using various mobile apps. I often found myself wondering, "How are these apps developed? How are they made?"
+  </p>
+  <p class="intro-mobileapp-intro">
+      With a thirst for knowledge and a desire to create, I embarked on a journey of self-study. I delved into the world of app development and soon discovered React Native, a versatile framework for building mobile applications. Driven by my newfound interest, I began self-learning React Native.
+  </p>
+  <p class="intro-mobileapp-intro">
+      As I delved deeper into React Native, I realized the incredible potential it offered for creating cross-platform mobile applications. It wasn't long before I started developing my own mobile applications using this framework, each project fueling my passion for app development.
+  </p>
+  <!-- Add more about your experience, achievements, and projects here -->
+</div>
+
+<div class="applist-container">
+  <h1>Google Play Store Apps</h1>
+  <div class="applist-app-card">
+      <h2 class="applist-app-name">Hotspot Chat App</h2>
+      <p class="applist-app-description">Chat without the need for an internet connection using hotspot technology. Stay connected even in remote areas.</p>
+      <a class="applist-app-link" href="https://play.google.com/store/apps/details?id=com.hotspotChatapp">Download</a>
+  </div>
+  <div class="applist-app-card">
+      <h2 class="applist-app-name">Quote App</h2>
+      <p class="applist-app-description">Discover a collection of friendly, inspirational, and life lesson quotes. Save your favorite quotes as photos for daily motivation.</p>
+      <a class="applist-app-link" href="https://play.google.com/store/apps/details?id=com.quoteappforeverythingstarted">Download</a>
+  </div>
+  <div class="applist-app-card">
+      <h2 class="applist-app-name">NEPSE App</h2>
+      <p class="applist-app-description">Stay informed about the stock market with real-time information and analysis. Make informed investment decisions with this handy app.</p>
+      <a class="applist-app-link" href="https://play.google.com/store/apps/details?id=com.nepseeverything">Download</a>
+  </div>
+  <div class="applist-app-card">
+      <h2 class="applist-app-name">Sudoku App</h2>
+      <p class="applist-app-description">Enjoy the classic Sudoku puzzle game on your mobile device. Challenge your mind with various difficulty levels.</p>
+      <a class="applist-app-link" href="https://play.google.com/store/apps/details?id=com.sudoku_by_2oal">Download</a>
+  </div>
+</div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="img_nature_wide.jpg" style="width:100%">
+    <div class="text">Caption Text</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="img_snow_wide.jpg" style="width:100%">
+    <div class="text">Caption Two</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="img_mountains_wide.jpg" style="width:100%">
+    <div class="text">Caption Three</div>
+  </div>
+  
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+  
+  </div>
+  
+  <br>
+  
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+  </div>
 
 <script>
 let slideIndex = 1;
@@ -628,6 +1280,51 @@ if(navbar.offsetTop!=0){
 }
 
 
+const descriptionTexts = [
+  "I'm the CEO of Overcloud,",
+  "an adventurer,",
+  "and a YouTube vlogger.",
+  "Join me on thrilling journeys worldwide."
+];
+
+const typingTextElement = document.getElementById('typing-text');
+
+function typeText() {
+  let lineIndex = 0;
+  let charIndex = 0;
+
+  function typeLine() {
+    if (lineIndex < descriptionTexts.length) {
+      const line = descriptionTexts[lineIndex];
+
+      if (charIndex < line.length) {
+        typingTextElement.innerHTML += line.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeLine, 50); // Adjust the typing speed (lower value for faster typing)
+      } else {
+        typingTextElement.innerHTML += '<br>'; // Add a line break between lines
+        charIndex = 0;
+        lineIndex++;
+        setTimeout(typeLine, 1000); // Adjust the delay before typing the next line (in milliseconds)
+      }
+    } else {
+      // After typing all lines, start over
+      typingTextElement.innerHTML = '';
+      setTimeout(typeText, 1000); // Adjust the delay before repeating (in milliseconds)
+    }
+  }
+
+  typeLine();
+}
+
+// Start the typing animation when the page loads
+window.onload = typeText;
+
+
+
+
+
+
 </script>
 
 </body>
@@ -635,71 +1332,3 @@ if(navbar.offsetTop!=0){
 
 
 
-
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  margin: 0;
-  background-color: #f1f1f1;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-#navbar {
-  background-color: #333;
-  position: fixed;
-  top: -50px;
-  width: 100%;
-  display: block;
-  transition: top 0.3s;
-}
-
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 15px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-#navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-</style>
-</head>
-<body>
-
-<div id="navbar">
-  <a href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-</div>
-
-<div style="padding:15px 15px 2500px;font-size:30px">
-  <p><b>This example demonstrates how to slide down a navbar when the user starts to scroll the page.</b></p>
-  <p>Scroll down this frame to see the effect!</p>
-  <p>Scroll to the top to hide the navbar.</p>
-  <p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
-
-<script>
-// When the user scrolls down 20px from the top of the document, slide down the navbar
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-50px";
-  }
-}
-</script>
-
-</body>
-</html> -->
