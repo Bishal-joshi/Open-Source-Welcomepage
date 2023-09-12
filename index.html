@@ -1308,13 +1308,14 @@ function typeText() {
         setTimeout(typeLine, 1000); // Adjust the delay before typing the next line (in milliseconds)
       }
     } else {
+      // uncomment all these tala ko to repeat
       // After typing all lines, start over
-      typingTextElement.innerHTML = '';
-      setTimeout(typeText, 1000); // Adjust the delay before repeating (in milliseconds)
+      // typingTextElement.innerHTML = '';
+      // setTimeout(typeText, 1000); // Adjust the delay before repeating (in milliseconds)
     }
   }
 
-  // typeLine(); //do not repeat
+  typeLine();
 }
 
 // Start the typing animation when the page loads
