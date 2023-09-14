@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  background-color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  transition: top 0.3s;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+#navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.content {
+  padding-top: 70px;
+}
+
+.timeline, .certificates {
+  background-color: white;
+  padding: 20px;
+  display: none;
+  color: black;
+}
+
+</style>
+</head>
+<body>
+
+<div id="navbar">
+  <a onclick="showContent('timeline')" id="timeline-link" class="active">Timeline</a>
+  <a onclick="showContent('certificates')" id="certificates-link">Certificates</a>
+  <!-- Add more links for other sections if needed -->
+</div>
+
+<div class="content">
+  <!-- Timeline Content -->
+  <div id="timeline" class="timeline" style="display: block;height: 75vh;">
+    <h1>Timeline</h1>
+    <!-- Add your timeline content here -->
+    <!-- <p>This is the Timeline content.</p> -->
+    <iframe src="../Timeline/timeline.html" width="100%" height='100%' ></iframe>
+
+  </div>
+
+  <!-- Certificates Content -->
+  <div id="certificates" class="certificates">
+    <h1>Certificates</h1>
+    <!-- Add your certificates content here -->
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p> <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p> <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p> <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p> <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+    <p>This is the Certificates content.</p>
+  </div>
+
+  <!-- Add more content sections for other links if needed -->
+</div>
+
+<script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+function showContent(sectionId) {
+  // Hide all content sections
+  var contentSections = document.querySelectorAll('.content > div');
+  for (var i = 0; i < contentSections.length; i++) {
+    contentSections[i].style.display = "none";
+  }
+
+  // Show the selected content section
+  var selectedSection = document.getElementById(sectionId);
+  if (selectedSection) {
+    selectedSection.style.display = "block";
+  }
+
+  // Remove the 'active' class from all navbar buttons
+  var navbarButtons = document.querySelectorAll('#navbar a');
+  for (var i = 0; i < navbarButtons.length; i++) {
+    navbarButtons[i].classList.remove('active');
+  }
+
+  // Add the 'active' class to the clicked navbar button
+  var clickedButton = document.getElementById(sectionId + '-link');
+  if (clickedButton) {
+    clickedButton.classList.add('active');
+  }
+
+  // Scroll to the selected content section
+  if (window.innerWidth <= 768) {
+    // Scroll to the top of the section for small screens
+    window.scrollTo(0, selectedSection.offsetTop);
+  } else {
+    // Scroll to the top of the page for larger screens
+    window.scrollTo(0, 0);
+  }
+}
+</script>
+
+</body>
+</html>
