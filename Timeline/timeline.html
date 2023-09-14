@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #474e5d;
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.content {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+    }
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+/* Add styles to the career heading */
+.career-heading {
+  text-align: center;
+  background-image: url('your-image.jpg'); /* Replace 'your-image.jpg' with the actual image file path */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 0; /* Adjust the padding as needed */
+}
+
+.career-heading h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+/* Update styles for the timeline to adjust its position below the heading */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px; /* Adjust the margin to create space below the heading */
+}
+
+</style>
+</head>
+<body>
+    <div class="career-heading">
+        <h1>My Career as an Engineer</h1>
+      </div>
+
+
+<div class="timeline">
+ 
+</div>
+
+
+
+<script>
+    // Define your career timeline data as an array of JSON objects
+    const careerTimeline = [
+      {
+        year: "2023",
+        events: ["Pandas", "Numpy", "Machine Learning", "Image Processing", "Neural Networks (A.I.)"]
+      },
+      {
+        year: "2022",
+        events: ["BlockChain", "Etherium"]
+      },
+      {
+        year: "2021",
+        events: ["React Native Developer (Android)", "Spring Boot Framework"]
+      },
+      {
+        year: "2019-2020",
+        events: ["JAVA", "JavaScript", "React JS", "Node JS", "MERN stack developer", "Mongo db"]
+      },
+      {
+        year: "2018-2019",
+        events: ["Arduino Uno Workshop", "Python"]
+      },
+      {
+        year: "2017-2018",
+        events: ["C Programming", "C++ Programming", "MySQL"]
+      },
+      {
+        year: "2018-2022 A.D. (BACHELOR)",
+        events: ["BACHELORS IN COMPUTER ENGINEERING", "NEPAL COLLEGE OF INFORMATION & TECHNOLOGY (completed)"]
+      },
+      {
+        year: "2016-2018 A.D. (Higher Education)",
+        events: ["HIGH SCHOOL EDUCATION BOARD", "PRASADI ACADEMY", "GPA=3.00"]
+      },
+      {
+        year: "2016 A.D. (SLC)",
+        events: ["SCHOOL LEAVING CERTIFICATE (SLC)", "IDEAL ENGLISH H.S. SCHOOL", "GPA=3.55"]
+      },
+      {
+        year: "2014-2015 A.D.",
+        events: ["QBASIC", "HTML"]
+      },
+      {
+        year: "2013-2014 A.D.",
+        events: ["Simple .bat codes to open file in every seconds to make a computer go slow", "CMD codes to make an calculator", "Making game from powerpoint"]
+      }
+    ];
+
+    // Map through the careerTimeline array and create timeline entries
+    const timelineContainer = document.querySelector(".timeline");
+    careerTimeline.forEach((entry, index)  => {
+      const container = document.createElement("div");
+    //   container.className = "container " + (entry.year.includes("A.D.") ? "left" : "right");
+    container.className = `container ${index % 2 === 0 ? "left" : "right"}`;
+
+      const content = document.createElement("div");
+      content.className = "content";
+      
+      const yearHeader = document.createElement("h2");
+      yearHeader.textContent = entry.year;
+      
+      const eventsList = document.createElement("ul");
+      entry.events.forEach(event => {
+        const eventItem = document.createElement("li");
+        eventItem.textContent = event;
+        eventsList.appendChild(eventItem);
+      });
+
+      content.appendChild(yearHeader);
+      content.appendChild(eventsList);
+      container.appendChild(content);
+      timelineContainer.appendChild(container);
+    });
+  </script>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #474e5d;
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.content {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+    }
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+/* Add styles to the career heading */
+.career-heading {
+  text-align: center;
+  background-image: url('your-image.jpg'); /* Replace 'your-image.jpg' with the actual image file path */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 0; /* Adjust the padding as needed */
+}
+
+.career-heading h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+/* Update styles for the timeline to adjust its position below the heading */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px; /* Adjust the margin to create space below the heading */
+}
+
+</style>
+</head>
+<body>
+    <div class="career-heading">
+        <h1>My Career as an Engineer</h1>
+      </div>
+
+
+<div class="timeline">
+ 
+</div>
+
+
+
+<script>
+    // Define your career timeline data as an array of JSON objects
+    const careerTimeline = [
+      {
+        year: "2023",
+        events: ["Pandas", "Numpy", "Machine Learning", "Image Processing", "Neural Networks (A.I.)"]
+      },
+      {
+        year: "2022",
+        events: ["BlockChain", "Etherium"]
+      },
+      {
+        year: "2021",
+        events: ["React Native Developer (Android)", "Spring Boot Framework"]
+      },
+      {
+        year: "2019-2020",
+        events: ["JAVA", "JavaScript", "React JS", "Node JS", "MERN stack developer", "Mongo db"]
+      },
+      {
+        year: "2018-2019",
+        events: ["Arduino Uno Workshop", "Python"]
+      },
+      {
+        year: "2017-2018",
+        events: ["C Programming", "C++ Programming", "MySQL"]
+      },
+      {
+        year: "2018-2022 A.D. (BACHELOR)",
+        events: ["BACHELORS IN COMPUTER ENGINEERING", "NEPAL COLLEGE OF INFORMATION & TECHNOLOGY (completed)"]
+      },
+      {
+        year: "2016-2018 A.D. (Higher Education)",
+        events: ["HIGH SCHOOL EDUCATION BOARD", "PRASADI ACADEMY", "GPA=3.00"]
+      },
+      {
+        year: "2016 A.D. (SLC)",
+        events: ["SCHOOL LEAVING CERTIFICATE (SLC)", "IDEAL ENGLISH H.S. SCHOOL", "GPA=3.55"]
+      },
+      {
+        year: "2014-2015 A.D.",
+        events: ["QBASIC", "HTML"]
+      },
+      {
+        year: "2013-2014 A.D.",
+        events: ["Simple .bat codes to open file in every seconds to make a computer go slow", "CMD codes to make an calculator", "Making game from powerpoint"]
+      }
+    ];
+
+    // Map through the careerTimeline array and create timeline entries
+    const timelineContainer = document.querySelector(".timeline");
+    careerTimeline.forEach((entry, index)  => {
+      const container = document.createElement("div");
+    //   container.className = "container " + (entry.year.includes("A.D.") ? "left" : "right");
+    container.className = `container ${index % 2 === 0 ? "left" : "right"}`;
+
+      const content = document.createElement("div");
+      content.className = "content";
+      
+      const yearHeader = document.createElement("h2");
+      yearHeader.textContent = entry.year;
+      
+      const eventsList = document.createElement("ul");
+      entry.events.forEach(event => {
+        const eventItem = document.createElement("li");
+        eventItem.textContent = event;
+        eventsList.appendChild(eventItem);
+      });
+
+      content.appendChild(yearHeader);
+      content.appendChild(eventsList);
+      container.appendChild(content);
+      timelineContainer.appendChild(container);
+    });
+  </script>
+
+</body>
+</html> -->
